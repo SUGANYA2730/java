@@ -1,7 +1,7 @@
 class ArrayExample{
 public static void main(String args[]){
 String[]names={"sugar","panda","donut","manshal"};
-System.out.println(names[3]);
+System.out.println(names[4]);
 for(int i=0; i<names.length;i++)
 {
 System.out.println(names[i]);
