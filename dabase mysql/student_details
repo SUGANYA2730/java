@@ -1,0 +1,62 @@
+use emp1;
+create table student(
+id int(10),
+sname varchar(20),
+sphone bigint(10),
+semail varchar(30),
+saddr varchar(50),
+squalification varchar(10),
+sfees double,
+sdob date,
+sdept varchar(20)
+); 
+
+#add new col
+alter table student ADD age int after sdob;
+
+#modify datatype size
+alter table student MODIFY sfees double not null;
+
+#drop col
+alter table student DROP COLUMN sdept;
+
+#Change col name
+alter table student CHANGE COLUMN age sage int;
+
+#rename table name
+alter table student RENAME TO student_details;
+
+#insert single row
+insert into student_details values(1,'suganya','8220195632','suganyars@gmail.com','chengalpat','BE','2700','2001-11-27',21);
+
+#insert multiple row
+insert into student_details values
+(2,'nithii',1234567899,'nithiyashree@gamil.com','chennai','MA','5000','2001-6-14','22'),
+(3,'vikshu',1234567789,'vikshushree@gamil.com','chennai','BCA','5700','1999-6-28','23'),
+(4,'manda',123487899,'rohini@gamil.com','chengalpat','ME','5200','1988-4-3','15');
+
+#update 
+update student_details set sage=22 where id=1;
+update student_details set squalification='BE' where id=3;
+
+#delete 
+delete from student_details where id=4;
+
+#fetch all details
+select*from student_details;
+
+#fetch multiple columns
+select id,squalification from student_details;
+
+#fetch details whose matching with condition
+select sname, sphone from student_details where sage>22;
+
+select * from student_details where squalification ='BE';
+
+select * from student_details where saddr = 'chennai' and sfees =5700;
+
+select * from student_details where saddr = 'chennai' or sfees =5700;
+
+select * from student_details where squalification !='BE';
+
+select * from student_details where result =1;
